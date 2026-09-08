@@ -18,11 +18,11 @@ conflicts=('u1s1')
 options=(!strip)
 _base_url="https://u1s1.io/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64
-source_x86_64=("${_base_url}/u1s1-cli-${pkgver}-linux-x64.tar.gz")
-source_aarch64=("${_base_url}/u1s1-cli-${pkgver}-linux-arm64.tar.gz")
+source_x86_64=("${_base_url}/u1s1-cli-1.9.0-linux-x64.tar.gz")
+source_aarch64=("${_base_url}/u1s1-cli-1.9.0-linux-arm64.tar.gz")
 # 校驗和按平台分開寫死；升版時由 CI 的 updpkgsums 更新
 sha256sums_x86_64=('f441c44ea0b591f519ccee18c9e613da8b768fcbf8d6005c97478c0751434c8e')
-sha256sums_aarch64=('SKIP')
+sha256sums_aarch64=('669f6bfd16dbc3aed392b2a7b52046ed6ad86313df2931f14485a9641285b10e')
 
 # LATEST 是純文字版本號，CI 的 plan 步驟直接 curl 它做版本比對。
 # 「更新校验和并回推 PKGBUILD」會用 updpkgsums 重算 x86_64 的校驗和回推；
