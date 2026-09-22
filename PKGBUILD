@@ -3,7 +3,7 @@
 # 上游不提供單獨的構建源碼，AUR 慣例對這種「官方預編譯 TUI/CLI」用 -bin 後綴。
 # 版本來源 https://u1s1.io/releases/LATEST；tarball 與 SHA256SUMS 由官方提供。
 pkgname=u1s1-bin
-pkgver=1.11.3
+pkgver=1.11.4
 pkgrel=1
 pkgdesc="u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)"
 arch=('x86_64' 'aarch64')
