@@ -1,13 +1,14 @@
 # Maintainer: Capricornus007 (auto-build via Capricornus007/repo)
 # u1s1（有一说一）官方 TUI CLI：自帶 Node 22 運行時的便攜 tarball。
 # 上游不提供單獨的構建源碼，AUR 慣例對這種「官方預編譯 TUI/CLI」用 -bin 後綴。
-# 版本來源 https://u1s1.io/releases/LATEST；tarball 與 SHA256SUMS 由官方提供。
+# 版本來源 https://u1s1app.com/releases/LATEST（中國站）；tarball 與 SHA256SUMS 由官方提供。
+# 國際站 u1s1.dev 的包不在此列：本包只跟中國站。
 pkgname=u1s1-bin
 pkgver=1.14.1
-pkgrel=1
+pkgrel=2
 pkgdesc="u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)"
 arch=('x86_64' 'aarch64')
-url="https://u1s1.io"
+url="https://u1s1app.com"
 license=('LicenseRef-Proprietary')
 depends=('bash')
 optdepends=(
@@ -16,13 +17,13 @@ optdepends=(
 provides=('u1s1')
 conflicts=('u1s1')
 options=(!strip)
-_base_url="https://u1s1.io/releases"
+_base_url="https://u1s1app.com/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64
-source_x86_64=("${_base_url}/u1s1-cli-1.9.0-linux-x64.tar.gz")
-source_aarch64=("${_base_url}/u1s1-cli-1.9.0-linux-arm64.tar.gz")
+source_x86_64=("${_base_url}/u1s1-cli-${pkgver}-linux-x64.tar.gz")
+source_aarch64=("${_base_url}/u1s1-cli-${pkgver}-linux-arm64.tar.gz")
 # 校驗和按平台分開寫死；升版時由 CI 的 updpkgsums 更新
-sha256sums_x86_64=('f441c44ea0b591f519ccee18c9e613da8b768fcbf8d6005c97478c0751434c8e')
-sha256sums_aarch64=('669f6bfd16dbc3aed392b2a7b52046ed6ad86313df2931f14485a9641285b10e')
+sha256sums_x86_64=('9fab9e9df276c938224cb8f965f258871e5c9af012283eb52568661cdc10a35c')
+sha256sums_aarch64=('76141bd8de0a6156832118b82c9bd7fc3203b193d3da187bb0178d27439fca14')
 
 # LATEST 是純文字版本號，CI 的 plan 步驟直接 curl 它做版本比對。
 # 「更新校验和并回推 PKGBUILD」會用 updpkgsums 重算 x86_64 的校驗和回推；
