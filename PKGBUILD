@@ -19,8 +19,8 @@ conflicts=('u1s1')
 options=(!strip)
 _base_url="https://u1s1app.com/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64
-source_x86_64=("${_base_url}/u1s1-cli-${pkgver}-linux-x64.tar.gz")
-source_aarch64=("${_base_url}/u1s1-cli-${pkgver}-linux-arm64.tar.gz")
+source_x86_64=("${_base_url}/u1s1-cli-1.14.1-linux-x64.tar.gz")
+source_aarch64=("${_base_url}/u1s1-cli-1.14.1-linux-arm64.tar.gz")
 # 校驗和按平台分開寫死；升版時由 CI 的 updpkgsums 更新
 sha256sums_x86_64=('9fab9e9df276c938224cb8f965f258871e5c9af012283eb52568661cdc10a35c')
 sha256sums_aarch64=('76141bd8de0a6156832118b82c9bd7fc3203b193d3da187bb0178d27439fca14')
