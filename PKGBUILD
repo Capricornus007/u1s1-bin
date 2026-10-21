@@ -2,10 +2,10 @@
 # u1s1（有一说一）官方 TUI CLI：自帶 Node 22 運行時的便攜 tarball。
 # 上游不提供單獨的構建源碼，AUR 慣例對這種「官方預編譯 TUI/CLI」用 -bin 後綴。
 # 版本來源 https://u1s1app.com/releases/LATEST（中國站）；tarball 與 SHA256SUMS 由官方提供。
-# 國際站 u1s1.dev 的包不在此列：本包只跟中國站。
-pkgname=u1s1-bin
+# 國際站 u1s1.dev 的包不在此列：本包只跟中國站，包名以 -cn 區分。
+pkgname=u1s1-cn-bin
 pkgver=1.14.1
-pkgrel=2
+pkgrel=1
 pkgdesc="u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)"
 arch=('x86_64' 'aarch64')
 url="https://u1s1app.com"
@@ -15,7 +15,8 @@ optdepends=(
   'git: 讓 u1s1 在項目裡工作'
 )
 provides=('u1s1')
-conflicts=('u1s1')
+conflicts=('u1s1' 'u1s1-bin')
+replaces=('u1s1-bin')
 options=(!strip)
 _base_url="https://u1s1app.com/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64

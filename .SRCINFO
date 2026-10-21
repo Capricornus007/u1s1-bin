@@ -1,7 +1,7 @@
-pkgbase = u1s1-bin
+pkgbase = u1s1-cn-bin
 	pkgdesc = u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)
 	pkgver = 1.14.1
-	pkgrel = 2
+	pkgrel = 1
 	url = https://u1s1app.com
 	arch = x86_64
 	arch = aarch64
@@ -10,10 +10,12 @@ pkgbase = u1s1-bin
 	optdepends = git: 讓 u1s1 在項目裡工作
 	provides = u1s1
 	conflicts = u1s1
+	conflicts = u1s1-bin
+	replaces = u1s1-bin
 	options = !strip
 	source_x86_64 = https://u1s1app.com/releases/u1s1-cli-1.14.1-linux-x64.tar.gz
 	sha256sums_x86_64 = 9fab9e9df276c938224cb8f965f258871e5c9af012283eb52568661cdc10a35c
 	source_aarch64 = https://u1s1app.com/releases/u1s1-cli-1.14.1-linux-arm64.tar.gz
 	sha256sums_aarch64 = 76141bd8de0a6156832118b82c9bd7fc3203b193d3da187bb0178d27439fca14
 
-pkgname = u1s1-bin
+pkgname = u1s1-cn-bin
