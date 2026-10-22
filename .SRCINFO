@@ -1,6 +1,6 @@
 pkgbase = u1s1-cn-bin
 	pkgdesc = u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)
-	pkgver = 1.14.1
+	pkgver = 1.14.3
 	pkgrel = 1
 	url = https://u1s1app.com
 	arch = x86_64
