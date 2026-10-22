@@ -5,7 +5,13 @@
 # 國際站 u1s1.dev 的包不在此列：本包只跟中國站，包名以 -cn 區分。
 pkgname=u1s1-cn-bin
 pkgver=1.14.3
-pkgrel=1
+# 2026-10-22：pkgrel 抬到 2 的理由——Capricornus007/repo 的「改写 PKGBUILD」那條 sed
+# 只匹配 u1s1-cli-${pkgver} 模板，而本檔當時是實字 1.14.1（上一次回推留下的），替換整條
+# 落空 ⇒ 已發布的 u1s1-cn-bin-1.14.3-1 解開來 opt/u1s1/u1s1-cli/package.json 仍是
+# "version": "1.14.1"（版號新、內容舊的假升級）。CI 那側已改成兩種寫法都吃＋硬驗；
+# 這裡同時把 URL 與官方 SHA256SUMS（https://u1s1app.com/releases/SHA256SUMS 實取）對成
+# 1.14.3，並用新 pkgrel 讓 1.14.3 真正重建一次。
+pkgrel=2
 pkgdesc="u1s1 — 有一说一，说人话的 AI 编程搭子 (official TUI CLI with bundled Node.js runtime)"
 arch=('x86_64' 'aarch64')
 url="https://u1s1app.com"
@@ -20,11 +26,11 @@ replaces=('u1s1-bin')
 options=(!strip)
 _base_url="https://u1s1app.com/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64
-source_x86_64=("${_base_url}/u1s1-cli-1.14.1-linux-x64.tar.gz")
-source_aarch64=("${_base_url}/u1s1-cli-1.14.1-linux-arm64.tar.gz")
+source_x86_64=("${_base_url}/u1s1-cli-1.14.3-linux-x64.tar.gz")
+source_aarch64=("${_base_url}/u1s1-cli-1.14.3-linux-arm64.tar.gz")
 # 校驗和按平台分開寫死；升版時由 CI 的 updpkgsums 更新
-sha256sums_x86_64=('9fab9e9df276c938224cb8f965f258871e5c9af012283eb52568661cdc10a35c')
-sha256sums_aarch64=('76141bd8de0a6156832118b82c9bd7fc3203b193d3da187bb0178d27439fca14')
+sha256sums_x86_64=('db71119997306395fc06d22939ce047f11d622c36fe2d0fa8300b08bb6228cb2')
+sha256sums_aarch64=('e0b619474a8c0064b285f4c445f4f38d22a5ae03035ae838384594dce3f5b9b4')
 
 # LATEST 是純文字版本號，CI 的 plan 步驟直接 curl 它做版本比對。
 # 「更新校验和并回推 PKGBUILD」會用 updpkgsums 重算 x86_64 的校驗和回推；
