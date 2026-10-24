@@ -4,7 +4,7 @@
 # 版本來源 https://u1s1app.com/releases/LATEST（中國站）；tarball 與 SHA256SUMS 由官方提供。
 # 國際站 u1s1.dev 的包不在此列：本包只跟中國站，包名以 -cn 區分。
 pkgname=u1s1-cn-bin
-pkgver=1.14.3
+pkgver=1.14.4
 # 2026-10-22：pkgrel 抬到 2 的理由——Capricornus007/repo 的「改写 PKGBUILD」那條 sed
 # 只匹配 u1s1-cli-${pkgver} 模板，而本檔當時是實字 1.14.1（上一次回推留下的），替換整條
 # 落空 ⇒ 已發布的 u1s1-cn-bin-1.14.3-1 解開來 opt/u1s1/u1s1-cli/package.json 仍是
@@ -26,11 +26,11 @@ replaces=('u1s1-bin')
 options=(!strip)
 _base_url="https://u1s1app.com/releases"
 # 平台映射沿用官方 install.sh：x86_64→linux-x64、aarch64→linux-arm64
-source_x86_64=("${_base_url}/u1s1-cli-1.14.3-linux-x64.tar.gz")
-source_aarch64=("${_base_url}/u1s1-cli-1.14.3-linux-arm64.tar.gz")
+source_x86_64=("${_base_url}/u1s1-cli-1.14.4-linux-x64.tar.gz")
+source_aarch64=("${_base_url}/u1s1-cli-1.14.4-linux-arm64.tar.gz")
 # 校驗和按平台分開寫死；升版時由 CI 的 updpkgsums 更新
-sha256sums_x86_64=('db71119997306395fc06d22939ce047f11d622c36fe2d0fa8300b08bb6228cb2')
-sha256sums_aarch64=('e0b619474a8c0064b285f4c445f4f38d22a5ae03035ae838384594dce3f5b9b4')
+sha256sums_x86_64=('15ff6087bc3ffb65b0378a09a70bf71a3b5c9c286176c993642b3463111ca6e4')
+sha256sums_aarch64=('b1da5e38273247eb5151e31aa05f34a37ca4d1ea5c09011f49b19c1e55f94983')
 
 # LATEST 是純文字版本號，CI 的 plan 步驟直接 curl 它做版本比對。
 # 「更新校验和并回推 PKGBUILD」會用 updpkgsums 重算 x86_64 的校驗和回推；
